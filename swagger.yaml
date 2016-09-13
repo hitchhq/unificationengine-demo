@@ -1,0 +1,54 @@
+swagger: '2.0'
+info:
+  title: UnificationEngine
+  description: Enable your products and software to communicate with people and things
+  version: "1.0.0"
+host: apiv2.unificationengine.com
+schemes:
+  - https
+basePath: /v2
+produces:
+  - application/json
+paths:
+  /user/create:
+    post:
+      summary: Create user
+      description: |
+        This endpoint will create a UnificationEngine™ user for the developer’s app. This user is required for adding the connections like facebook, twitter etc.
+        
+        The user should be created with the key and secret of the app. On successful creation of a user, a uri containing the access key and the secret for the user will be returned as response, which is required for all further api calls. The uri will be in the format “user://access_key:secret@”.
+      responses:
+        200:
+          description: Successful user creation
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+              info:
+                type: string
+              uri:
+                type: string
+  /user/list:
+    post:
+      summary: List users
+      description: |
+        This endpoint will list all the users created for the app. This api call should be authenticated with the key and secret of the app.
+      responses:
+        200:
+          description: A list of users
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+              info:
+                type: string
+              users:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    uri:
+                      type: string
+  
