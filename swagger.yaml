@@ -14,7 +14,7 @@ paths:
     post:
       summary: Create user
       description: |
-        This endpoint will create a UnificationEngine™ user for the developer’s app. This user is required for adding the connections like facebook, twitter etc.
+        This endpoint will create a <a href="https://developer.unificationengine.com/">UnificationEngine™</a> user for the developer’s app. This user is required for adding the connections like facebook, twitter etc.
         
         The user should be created with the key and secret of the app. On successful creation of a user, a uri containing the access key and the secret for the user will be returned as response, which is required for all further api calls. The uri will be in the format “user://access_key:secret@”.
       responses:
